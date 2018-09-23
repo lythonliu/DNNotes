@@ -1,0 +1,43 @@
+
+性能优化的帮助工具：
+	MAT,
+	Memory Monitor(属于AndroidMonitor中一个模块)，
+	HeapTool(查看堆信息)，
+	Allaction Tracking，
+	LeakCanary
+	Lint工具
+
+1.Allaction Tracking
+追踪内存分配信息。可以很直观地看到某个操作的内存是如何进行一步一步地分配的。
+
+
+2.LeakCanary
+Square公司
+可以直接在手机端查看内存泄露的工具
+实现原理：本质上还是用命令控制生成hprof文件分析检查内存泄露。
+然后发送通知。
+Application
+	install()
+LeakCanary
+	androidWatcher()
+RefWatcher
+	new AndroidWatcherExecutor() --->dumpHeap()/analyze()(--->runAnalysis())--->Hprof文件分析
+	new AndroidHeapDumper()
+	new ServiceHeapDumpListener
+
+
+3.Lint分析工具
+Android Studio很方便 很好用。
+	检测资源文件是否有没有用到的资源。
+	检测常见内存泄露
+	安全问题SDK版本安全问题
+	是否有费的代码没有用到
+	代码的规范---甚至驼峰命名法也会检测
+	自动生成的罗列出来
+	没用的导包
+	可能的bug
+
+
+
+
+

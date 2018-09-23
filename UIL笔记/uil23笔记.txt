@@ -1,0 +1,20 @@
+
+android.hardware.Camera.java
+android.graphics.Camera.java//
+A camera instance can be used to compute 3D transformations 
+and generate a matrix that can be applied, for instance, on a Canvas.
+3D transformations :3D变换计算，生成一个Matrix矩阵实例用于画布上面绘制。
+Camera内部实际上opengl。很多时候我们用OpenGL做3D特效，其实Camera可以满足绝大部分的需要。
+
+一般我们做3D特效，使用Camera+Matrix结合使用
+注意:Camera里面的坐标系跟Android的屏幕坐标系不一样。
+
+
+3D翻转--轮转效果
+1.canvas里面切割Bitmap为6个图片
+2.再通过Camera+Matrix对6个图片分别进行旋转变换
+
+
+
+
+

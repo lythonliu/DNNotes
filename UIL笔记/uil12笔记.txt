@@ -1,0 +1,69 @@
+第一步   下载含有中国地图的  SVG 
+第二步   用http://inloop.github.io/svg2android/  网站 将svg资源转换成相应的 Android代码
+第三步   利用Xml解析SVG的代码  封装成javaBean   最重要的得到Path
+第四步   重写OnDraw方法  利用Path绘制中国地图
+第五步   重写OnTouchEvent方法，记录手指触摸位置，判断这个位置是否坐落在某个省份上
+
+
+
+			
+	(1)Path指令解析如下所示：
+	Path	
+				M = moveto(M X,Y) ：将画笔移动到指定的坐标位置，相当于 android Path 里的moveTo()
+				L = lineto(L X,Y) ：画直线到指定的坐标位置，相当于 android Path 里的lineTo()
+				H = horizontal lineto(H X)：画水平线到指定的X坐标位置 
+				V = vertical lineto(V Y)：画垂直线到指定的Y坐标位置 
+				C = curveto(C X1,Y1,X2,Y2,ENDX,ENDY)：三次贝赛曲线 
+				S = smooth curveto(S X2,Y2,ENDX,ENDY) 同样三次贝塞尔曲线，更平滑 
+				Q = quadratic Belzier curve(Q X,Y,ENDX,ENDY)：二次贝赛曲线 
+				T = smooth quadratic Belzier curveto(T ENDX,ENDY)：映射 同样二次贝塞尔曲线，更平滑 
+				A = elliptical Arc(A RX,RY,XROTATION,FLAG1,FLAG2,X,Y)：弧线 ，相当于arcTo()
+				Z = closepath()：关闭路径（会自动绘制链接起点和终点）
+				
+			    android:pathData="M541.02,336.29L541.71,336.09
+				L542.54,337.38L543.77,338.27
+				L543.53,338.58L545.92,338.99.8,350.12L561.12,349.61L562.97,349.6L563.89,349.94
+				L563.48,350.21L563.6,351.15L562.98,351.84L562.99,353.94L562.28,353.68L562.06,3
+				53.97L561.87,355.49L561.13,355.88L561.38,356.41L560.77,357.72L561.33,357.73
+				。。。。。
+				L562.06,359L563.49,358.5L563.75,357.85L564.17,358.09L564.64
+				,361.19L565.52,361.68L564.51,362.21L564.67,363.38L565.17,363.21L565.35,364.41
+				L566.19,364.53L566.23,365.29L567.26,365L568.99,365.25L569.63,364.91
+				L539.3,337.63L539.84,336.78L540.31,336.88z" />
+ 
+				
+		//指令详情可以  参考 http://www.w3school.com.cn/svg/svg_intro.asp
+		
+
+		//SVG    --->  动画     
+		地图资源可以在   https://www.amcharts.com/dl/javascript-maps/  下载
+		里面包含世界各个国家的SVG地图   各个省份地图
+		
+		
+		
+		
+		34  个Path
+		
+		 23个省、4个直辖市、2个特别行政区、5个自治区
+		
+		
+		
+		
+		
+		2014753635
+		
+		
+		
+		
+		
+		
+		
+		
+		星期五检查 （作业发邮箱  2014753635@qq.com） 
+		 
+		
+		作业  用SVG   打造可交互式的台湾地图
+		 
+		
+		
+		

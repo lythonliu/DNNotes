@@ -1,0 +1,60 @@
+ ==============  第一节：Meterail Design==============================
+ 
+ 
+ 
+   是什么？
+   https://material.io/
+   视觉设计语音。，统一一种接近真实实物的视觉效果
+   
+   以设置（Settings）作为说明：
+   1 位置： 除了 help & feedback 以为最下面的地方
+   2 作用： 
+     必须是精选的一些能够让用户快速明白意思的，有提供选项给用户的，而且是根据优先级排列
+	 的items。
+   3. 如何选择恰当的设置项
+   4. 做出正确的default值
+   
+   2-8 原则
+
+====================================================================
+    控件的兼容性
+	v4 v7 v13 数字代表的是支持的api 的version
+	讲解button
+	theme 方式为什么能自适应 5.0 一下的版本呢？
+	AppCompatButton
+	android.support.v4.app.Button
+	一样的，一模一样
+	
+	CircleImageView
+	EdgeEffectCompat： 将layout滑倒底后边界的波浪线
+	
+=====================	AppCompatActivity  =========================
+作用：兼容。
+AppCompatActivity extends FragmentActivity extends Activity
+
+原理： 继承了AppCompatActivity 的Activity 都会在解析XML 的时候，将xml里面所有的系统控件转换为
+       appCompatButton。
+	   它的源码是怎样的呢？
+    所谓的兼容，就是一个着色问题！！！
+	AppCompatDelegate 的工作就是涂色。
+	替换：widget着色是通过这个widget 的layout 在inflation 的时候，被AppCompatDelegate 拦截下来，然后根据
+	控件的名字，强制被系统转换成为 以AppCompat 开头的控件。
+	
+
+	作业： 分析 AppCompatDelegate 解析的源码...AppCompatViewInflater
+	AppCompatViewInflater 可以给我们开发提供热换肤原理
+	
+===================== LinearLayoutCompat 源码===================
+目的： 教大家一套分析 ViewGroup 的原则
+     1.这个类是干什么的，是控件还是组件，看他的初始化在干什么
+	 2.找到入口，一般是构造器
+	 3.找关键方法：onMeasure  onLayout   onDraw
+	 onMeasure 是 计算子控件的大小，同时计算自己的大小。自己的宽高是由子空间的宽高决定的，根据摆放的方向不同而算法不同
+	 onLayout 是将子控件的上下左右位置进行确定。然后布局到layout上面
+	 onDraw    只用来画layout 自己的分割线。
+	
+   
+   
+ 
+   
+      

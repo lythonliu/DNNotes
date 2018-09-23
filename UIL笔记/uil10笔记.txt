@@ -1,0 +1,17 @@
+﻿可以在线模拟钢笔工具的使用：
+
+http://bezier.method.ac/
+
+
+贝塞尔曲线的一个比较好的动态演示如下所示：
+
+http://myst729.github.io/bezier-curve/
+
+
+
+
+笔记：参见doc文档
+
+
+作业：SearchView动画
+

@@ -1,0 +1,55 @@
+
+网络的优化
+
+1.请求的缓存。
+Http请求是可以做缓存的。
+
+
+三级缓存
+内存缓存、外部缓存
+算法LruCache
++自定的 一周过期等等。
+Sqlite缓存+加密
+
+=============================================
+Bitmap的优化
+
+图片压缩
+
+BitmapFactory
+
+BitmapFactory.Options:参数：
+inDensity:bitmap的像素密度
+inTargetDensity：bitmap最终的像素密度
+
+DensityDpi(屏幕的像素密度)  分辨率		Density
+160dpi				320x533		1
+
+px  = dp*Density
+
+ 图片存在的几种形式：
+	
+
+
+1.质量压缩
+AB
+CD
+压缩后
+AA
+AA
+
+
+2.尺寸压缩
+
+3.采样率压缩
+
+
+
+
+
+
+
+
+
+
+
